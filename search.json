@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "links.html",
+    "href": "links.html",
+    "title": "Links",
+    "section": "",
+    "text": "https://www.maxjerdee.com/"
+  },
+  {
+    "objectID": "links.html#example",
+    "href": "links.html#example",
+    "title": "Links",
+    "section": "",
+    "text": "https://www.maxjerdee.com/"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Tyler Johnston",
@@ -61,12 +82,5 @@
     "title": "Tyler Johnston",
     "section": "Certifications",
     "text": "Certifications\n\nIRB Certification\nForklift Certifications: Scissor Lift 3A, Boom Lift 3B, Counterbalance CL 1/4/5, Rough Terrain CL 7"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
   }
 ]

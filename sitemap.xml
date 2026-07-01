@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Tyler-Johnston-1.github.io/resume/index.html</loc>
-    <lastmod>2026-07-01T15:19:32.398Z</lastmod>
+    <loc>https://Tyler-Johnston-1.github.io/resume/links.html</loc>
+    <lastmod>2026-07-01T15:36:05.541Z</lastmod>
   </url>
   <url>
     <loc>https://Tyler-Johnston-1.github.io/resume/about.html</loc>
     <lastmod>2026-07-01T15:19:32.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Tyler-Johnston-1.github.io/resume/index.html</loc>
+    <lastmod>2026-07-01T15:19:32.398Z</lastmod>
   </url>
 </urlset>
