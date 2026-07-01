@@ -11,9 +11,9 @@ website:
         text: Resume
       - text: Projects
         menu:
-          - href: 8439_airlines.qmd
+          - href: 8439_airlines.html
             text: Airline Satisfaction
-          - href: 8439_tips.qmd
+          - href: 8439_tips.html
             text: Tips Analysis
 
 format:
