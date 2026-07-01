@@ -1,0 +1,7 @@
+---
+title: "Links"
+---
+
+## Example
+
+[https://www.maxjerdee.com/](https://www.maxjerdee.com/)
