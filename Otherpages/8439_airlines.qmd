@@ -1,0 +1,283 @@
+---
+title: 'Final Project: Airline Satisfaction'
+author: "908 891 8439"
+date: '`r lubridate::today()`'
+format: 
+  html: 
+    embed-resources: true
+    toc: true 
+    toc_depth: 4
+editor_options: 
+  chunk_output_type: console
+---
+
+### Setup Chunk
+
+```{r}
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(tidymodels)
+
+# Missingness packages
+library(mice)
+library(naniar, exclude = "n_complete")
+
+source("https://github.com/jjcurtin/lab_support/blob/main/fun_eda.R?raw=true")
+source("https://github.com/jjcurtin/lab_support/blob/main/fun_plots.R?raw=true")
+
+options(conflicts.policy = "depends.ok")
+
+path_data <- "Psych_752/Application Exams/Data"
+```
+
+Loading necessary packages, setting conflict policy, and defining a path.
+
+## EDA
+
+### Data Loading & Cleaning
+
+```{r}
+data <- read_csv(here::here(path_data, "airline_passenger_satisfaction.csv")) |> 
+  janitor::clean_names() |> 
+  glimpse()
+
+data_clean <- data |>
+  mutate(
+    id = as.character(id)) |>
+  mutate(
+    gender = factor(gender,
+                    levels = c("Male", "Female"),
+                    labels = c("0", "1")),
+    customer_type = factor(customer_type,
+                           levels = c("disloyal Customer", "Loyal Customer"),
+                           labels = c("0", "1")),
+    type_of_travel = factor(type_of_travel,
+                            levels = c("Business travel", "Personal Travel"),
+                            labels = c("0", "1"))) |>
+  mutate(
+    customer_class = factor(customer_class,
+                            levels = c("Eco", "Eco Plus", "Business"),
+                            ordered = TRUE),
+    satisfaction = factor(satisfaction,
+                          levels = c("neutral or dissatisfied", "satisfied"),
+                          labels = c("0", "1"))) |>
+  glimpse()
+
+data_nona <- data_clean |> 
+  drop_na()
+```
+
+After loading in the data and cleaning the names, we needed to clean the dataset itself.
+
+1\) All binary predictors were coded as labeled factors (0 and 1) to keep modeling smooth. 2) Customer class was treated as an ordered factor to preserve meaningful ordering but without assuming any specific spacing between levels. 3) All Likert-type scale variables (0-5) were left as numerics to allow for flexible modeling. 4) Outcome variable (satisfaction) was coded 0 (not satisfied/neutral) and 1 (satisfied).
+
+Then I made a new dataset from this version that undergoes casewise deletion of missing values/NAs, this left us with just over 2/3rds of the cases since many had at least 1 missing value. We'll retain both versions for now.
+
+### Additional EDA
+
+```{r}
+data_clean |> 
+  skim_some()
+# Quite a bit of missingness (mostly from gender), let's see if we can determine type of missingness and potentially move forward without simply excluding all cases with any missing.
+
+d <- data_clean |> select(gender, customer_class, customer_type, age, flight_distance, online_boarding, onboard_service, departure_delay_in_minutes, arrival_delay_in_minutes)
+
+skimr::skim(d)
+
+gg_miss_upset(d)
+```
+
+Most missingness comes from gender, 105 of the 181 variables that are missing anything are only missing gender. 32 are missing only online boarding, 18 are missing only onboard_service, and very few (13) participants had missingness on more than 1 variable, with none having more than 2. Would be great to be able to retain gender by imputing realistic "values" using correlated variables, then we could compare performance of our eventual models trained on each version and see if imputation helps our model performance.
+
+### Missingness EDA continued
+
+```{r}
+d |> 
+  mutate(across(where(is.factor), ~ as.numeric(.))) |> 
+  cor(use = "pairwise.complete.obs") |> 
+  corrplot::corrplot.mixed()
+```
+
+Seems gender is not associated with any variables, so we'll probably just have to drop all cases missing gender. Other variables don't have much missingness so won't try to impute for those either. We'll use data_nona from here on out as we also have no reason to assume any coding errors for the NAs.
+
+### Univariate EDA & Class Balance
+
+```{r}
+data_nona |> 
+  select(where(is.numeric)) |> 
+  summary()
+
+data_nona |> 
+  pivot_longer(where(is.numeric)) |> 
+  ggplot(aes(x = value)) +
+  geom_histogram(bins = 30) +
+  facet_wrap(~ name, scales = "free")
+
+data_nona |> count(satisfaction)
+```
+
+Ranges all look reasonable, we are seeing that we do have imbalanced classes as 67% of respondents were satisfied, so we'll want to use something besides raw accuracy as our performance metric (F1, balanced accuracy, kappa, or auROC all considered at this point). In our specific context here, we are looking to predict passenger satisfaction. As such, we may want to minimize false positives (we predict satisfied for customers that aren't satisfied) as we might want to reach out to potentially unsatisfied customers to improve customer relations. We will later consider increasing our classification threshold so that we miss fewer unsatisfied customers, focusing on a higher specificity. We can simply use auROC to tune, but then evaluate based on auROC and specificity. Ideally we'd speak with the rest of the team to determine beforehand what our optimizing and satisficing metrics are, along with what value to use for our satisficing metric, but unfortunately everyone else is out of office we are unable to predetermine these.
+
+### Bivariate EDA
+
+```{r}
+data_nona |>
+  select(where(is.numeric)) |>
+  cor(use = "pairwise.complete.obs") |> 
+  corrplot::corrplot.mixed()
+
+data_nona <- data_nona |> 
+  mutate(delay_max = pmax(departure_delay_in_minutes, arrival_delay_in_minutes))
+```
+
+Departure delay and arrival delay have correlation of .98, we're going to make a new variable called delay_max that simply takes the maximum delay value of either departure or arrival for each participant. This seems preferable to taking the mean of the two as we expect that satisfaction is likely to be largely driven by the worst delay-related experience. Keeping both provides very little additional information and would mean we have high multicollinearity.
+
+## Fitting & Evaluating models
+
+### Splitting data
+
+```{r}
+set.seed(123)
+
+split <- initial_split(data_nona, prop = 0.8, strata = satisfaction)
+
+train_data <- training(split)
+test_data  <- testing(split)
+```
+
+We'll want a performance estimate of our model on held-out data, so we split the data here, will only touch the training data. Since we have 419 observations it seems setting aside 20% as held-out will be just fine here. Making our training set any smaller may inflate bias and making the held-out set smaller might give is a high variance estimate, to combat this we will additionally perform repeated kfold cross-validation on the training set, using that final held-out 20% as a pure test set/final check. We considered a single validation or nested cross-validation approach as well, but due to high variance and unnecessary complexity we decided against them. We'll do 5 folds as we don't want to do too many since having the sample sizes within each split be any smaller may cause variance problems, and we'll do 10 repeats for additional variance reduction, but not any more for computational cost/time considerations.
+
+### Cross-validation setup/folds
+
+```{r}
+folds <- vfold_cv(train_data, v = 5, repeats = 10, strata = satisfaction)
+```
+
+### Recipe
+
+```{r}
+rec <- recipe(satisfaction ~ ., data = train_data) |>
+  step_rm(c("id", "departure_delay_in_minutes", "arrival_delay_in_minutes")) |>
+  step_dummy(all_nominal_predictors()) |>
+  step_zv(all_predictors()) |>
+  step_normalize(all_numeric_predictors())
+```
+
+Here we make our recipe for our model. We'll be training on the held-in training data, but first we've removed id (no predictive information) and also both highly redundant delay metrics as we have combined them into a single feature. We then dummy coded numerics so they can be used and removed all zero variance predictors as they also contain no useful information. Finally we normalized the numerics because we'll be tuning a glmnet model in which large coefficients are penalized, so they all must be on the same scale to avoid unfairly penalizing coefficients for flight distance, age, etc.
+
+### Model Specification & Workflow
+
+```{r}
+m1_log_reg <- logistic_reg(
+  penalty = tune(),
+  mixture = tune()) |>
+  set_engine("glmnet")
+
+wf <- workflow() |>
+  add_recipe(rec) |>
+  add_model(m1_log_reg)
+```
+
+We're choosing to tune a glmnet as it gives us a simple, interpretable, and semi-flexible classification model (flexible in terms of regularization and potentially feature selection, though still assumes linear DGP). If this linear classsification baseline performs poorly, we'll likely transition to a nonparametric approach. We then combine the preprocessing recipe and model specification into a workflow so that the preprocessing steps are concisely and consistently applied within our cross-validation folds.
+
+### Hyperparameter Grid
+
+```{r}
+grid <- grid_regular(
+  penalty(range = c(-3, -1)),
+  mixture(),
+  levels = 5)
+```
+
+We define a tuning grid for the penalty and mixture hyperparameters. We started with a more coarse grid before refining our search for optimal penalty values, we find that small to moderate penalties are ideal. This left us with -3 to -1 (log scale) as our penalty consideration range. The mixture simply tries different blends of L2 and L1 regularization, along with pure L2 and pure L1.
+
+### Tuning
+
+```{r}
+# About 2 minutes
+tuned_results <- tune_grid(
+  wf,
+  resamples = folds,
+  grid = grid,
+  metrics = metric_set(roc_auc, specificity, accuracy))
+```
+
+### Results
+
+```{r}
+autoplot(tuned_results)
+
+tuned_results |>
+  collect_metrics() |>
+  select(penalty, mixture, .metric, mean) |>
+  pivot_wider(names_from = .metric, values_from = mean) |>
+  arrange(desc(roc_auc)) |>
+  slice_head(n = 20)
+```
+
+Here we have our results, we've printed the top 20 in regard to auroc because we are also very interesting in specificity. Looking through these we see relatively stable auroc in that there aren't big gaps in performance, but there are quite big gaps in specificity. Model 7 specifically stuck out to us as it is performing only .005 units lower on auroc, but has an extremely good specificity of .942, which is .06 higher than the top performing model in respect to auroc. In other words, we got a substantial gain in specificity with only a minor reduction in auroc. This model also happens to be pure L1 regularized, so we'll have an even simpler model, and this will allow us to require less data from customers and still be able to use the model. If we aren't as interested in specificity as I have outlined, we can easily come back and select a different model irrespective of specificity, but for now this will be our model to continue with.
+
+Further, though the model’s overall accuracy (≈0.755) is slightly lower than the maximum achievable, this reflects a deliberate tradeoff aligned with our objective here. We prioritized correctly identifying dissatisfied customers, which leads us to favor models with higher specificity even at the cost of some accuracy. This results in a more conservative classification rule where some satisfied customers may be flagged for follow-up. However, the cost of unnecessarily contacting a satisfied customer is relatively low and still may be beneficial regarding costumer relations, whereas failing to identify a dissatisfied customer may lead to lost future business. As such, the chosen model sacrifices a small amount of overall accuracy in order to better capture customers at risk of dissatisfaction, which is more valuable in this context.
+
+### Fit our best model to the full training data and evaluate on held-out data
+
+```{r}
+best_params <- tibble(
+  penalty = 0.1,
+  mixture = 1)
+
+final_wf <- finalize_workflow(wf, best_params)
+
+final_model <- fit(final_wf, data = train_data)
+
+preds <- predict(final_model, test_data, type = "prob") |>
+  bind_cols(predict(final_model, test_data, type = "class")) |>
+  bind_cols(test_data)
+```
+
+### Held-out performance
+
+```{r}
+roc_auc(preds, truth = satisfaction, .pred_0)
+spec(preds, truth = satisfaction, estimate = .pred_class)
+```
+
+Evaluating our model on test we see that there was some slight optimization bias in our earlier performance estimate, but only marginally so. We still had an extremely good specificity of .93 and an acceptable auROC of .846. Our model seems to be quite low variance if we compare these to the earlier values of .94 and .86. Our bias is still quite low, though I'd make the argument that we don't mind it being where it is as there's such a low cost to reaching out to additional customers. However, if we are providing compensation or travel vouchers based upon the model, this would change quite a bit. Depending on what we want we could make the necessary changes, but this appears to serve as a fantastic baseline model.
+
+```{r}
+fullglmnet_fit <- final_model$fit$fit$fit
+coefficients <- coef(fullglmnet_fit, s = 0.1)
+
+coefficients <- as.matrix(coefficients)
+coefficients <- data.frame(
+  term = rownames(coefficients),
+  estimate = coefficients[,1])
+
+coefficients
+
+coefficients_used <- coefficients[coefficients$estimate != 0, ]
+
+coefficients_used
+```
+
+Importantly, we looked into our selected model to see what information it's using and what we found may be extremely interesting/valuable to us. The model only retained flight distance, online boarding, inflight entertainment, type of travel, and the dummy variable coding for Economy vs Economy plus. What this means is that if we move forward with this model, these are the only datapoints we'll need to collect and all but the inflight entertainment rating are things we are likely collecting for all passengers already. Therefore, implementing this model means there is no need for collecting the other data if doing so is expensive or time-consuming, and simply asking for a rating of inflight entertainment would suffice. Further, we may look into additionally prioritizing inflight entertainment, though we should be careful in taking away resources from any other aspects of the experience, especially without looking deeper into specific feature importance metrics like shapley values.
+
+## Prediction summary:
+
+### Spending your data:
+
+We split the dataset into an 80/20 train–test split using stratification on the outcome to preserve class balance. The training set was used for all model fitting and model selection, while the test set was held out as a final, unbiased estimate of model performance. Within the training data, we used repeated 5-fold cross-validation (10 repeats) to evaluate model configurations. This approach balances bias and variance trade-off considerations. Holding out a test set prevents optimization bias in performance estimates, while repeated cross-validation reduces the variance of model evaluation compared to a single split. Given the moderate sample size (n = 419 after casewise deletion), this strategy allows us to efficiently use the data while still maintaining a reliable estimate of generalization performance. The main tradeoff is that reserving 20% of the data reduces the amount available for model fitting, potentially increasing bias slightly. However, this is mitigated by cross-validation, and the benefit of having a clean, unbiased test evaluation outweighs this cost.
+
+### Model configurations:
+
+We focused on a regularized logistic regression model (glmnet), tuning two key hyperparameters: the penalty, which controls the strength of regularization, and the mixture parameter, which determines the balance between ridge (L2) and lasso (L1) penalties. We explored a range of penalty values (on a log scale) and multiple mixture values spanning ridge to lasso, beginning with a broader grid and then refining to smaller penalty values where performance was strongest. This ensured that we considered models ranging from L2 regularization with little to no penalty all the way to large penalties and L1 regularization/feature selection. We determined that we had explored a sufficient range when performance was less variable (in terms of auROC, specificity, and accuracy) across a region of hyperparameters, indicating that further expansion of the grid was unlikely to yield meaningful improvements. Earlier grid values showed sporatic and massive decreases in these metrics. Additionally, comparing ridge, lasso, and elastic net configurations ensured that both shrinkage-based and feature-selection-based models were considered.
+
+### Model selection:
+
+Model performance during tuning was evaluated primarily using auROC, specificity, and accuracy. We didn't overtly set values for any of these values beforehand which would've been ideal. If we had, we could have set either auROC or specificity as our satisficing metric and the other as our optimization metric. In practice, we basically did this post-hoc by focusing only on models with an acceptable auROC , before selecting the model out of those that maximized specificity. auROC was chosen because it is threshold-independent and provides a robust measure of the model’s ability to discriminate between satisfied and unsatisfied customers, particularly in the presence of class imbalance (67/33). Specificity was a big part of the model decision-making process as we supposed that minimizing false positives (incorrectly classifying dissatisfied customers as satisfied) was worthwhile given the potential uses for the model and the ramifications, as we explained in more depth previously. While the model with the highest auROC achieved slightly better overall discrimination, an alternative model was selected that sacrificed a small amount of auROC (≈0.005) in exchange for a substantial increase in specificity (≈0.06). This reflected a deliberate, cost-sensitive decision where maximizing overall discrimination was less important than correctly identifying dissatisfied customers.
+
+### Model characterization
+
+The expected model performance for new data was approximated by evaluating on the held-out test set. The model achieved an auROC of 0.846 and a specificity of 0.93, indicating strong predictive discrimination and a high rate of correctly identifying dissatisfied customers. Comprehensively characterizing performance depends on our ultimate goals with the model, but we give a comprehensive performance characterization through auROC which measures overall discrimination, specificity which measures the models ability to correctly identify dissatisfied customers (potentially highly relevant to us), and accuracy which tells us the general correctness but is less informative under imbalance, though highly interpretable. In real-world terms, this model is intentionally conservative, it prioritizes identifying dissatisfied customers, even if that means sometimes flagging satisfied customers for follow-up. The validity of this choice depends entirely on what our goals with the model are, if we are simply contacting potentially dissatisfied customers for feedback/questions versus if we are offering compensation or vouchers based on predictions is paramount. The cost of contacting a satisfied customer is very low (and may even improve customer relations), whereas failing to identify a dissatisfied customer may result in lost future business. For this baseline model, we've assumed simple-contacting as the goal, which is reflected by the models asymmetric error structure (false positives as low cost but false negatives as potentially high cost), but this can be easily changed in future models if our objectives change.

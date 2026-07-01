@@ -2,12 +2,19 @@ project:
   type: website
 
 website:
-  title: "resume"
+  title: "Tyler Johnston"
+  description: "Resume of Tyler Johnston."
   navbar:
+    title: "Tyler Johnston"
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Resume
+      - text: Projects
+        menu:
+          - href: 8439_airlines.qmd
+            text: Airline Satisfaction
+          - href: 8439_tips.qmd
+            text: Tips Analysis
 
 format:
   html:
