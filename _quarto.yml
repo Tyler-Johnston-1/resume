@@ -1,5 +1,7 @@
 project:
   type: website
+  exclude:
+    - "source/**"
 
 website:
   title: "Tyler Johnston"
