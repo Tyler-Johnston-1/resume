@@ -2,6 +2,10 @@
 title: "Links"
 ---
 
-## Example
+## GitHub
 
-[https://www.maxjerdee.com/](https://www.maxjerdee.com/)
+[https://github.com/tyler-johnston-1](https://github.com/tyler-johnston-1)
+
+## LinkedIn
+
+[https://www.linkedin.com/in/tyler-johnston-408868381/](https://www.linkedin.com/in/tyler-johnston-408868381/)

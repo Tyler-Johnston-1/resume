@@ -4,6 +4,9 @@ _site/
 _freeze/
 *.quarto_ipynb
 
+# Source file copies
+*_source_copy.qmd
+
 # Misc Files
 ~*.docx
 
