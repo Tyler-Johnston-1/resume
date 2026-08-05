@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://Tyler-Johnston-1.github.io/resume/resume.html</loc>
+    <lastmod>2026-07-24T19:03:23.227Z</lastmod>
+  </url>
+  <url>
     <loc>https://Tyler-Johnston-1.github.io/resume/links.html</loc>
-    <lastmod>2026-07-21T19:38:16.807Z</lastmod>
+    <lastmod>2026-07-21T23:14:24.217Z</lastmod>
   </url>
   <url>
     <loc>https://Tyler-Johnston-1.github.io/resume/about.html</loc>
@@ -10,6 +14,10 @@
   </url>
   <url>
     <loc>https://Tyler-Johnston-1.github.io/resume/index.html</loc>
-    <lastmod>2026-07-21T20:42:08.339Z</lastmod>
+    <lastmod>2026-08-05T02:30:33.928Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Tyler-Johnston-1.github.io/resume/projects.html</loc>
+    <lastmod>2026-08-04T23:54:45.268Z</lastmod>
   </url>
 </urlset>
