@@ -7,10 +7,9 @@ A personal resume website built with [Quarto](https://quarto.org/) and hosted on
 ## Repository Files
 
 - `index.qmd` - Main resume page with professional experience, education, and skills
-- `about.qmd` - About section
-- `links.qmd` - Professional links and social profiles
+- `links.qmd` - Professional links
 - `Otherpages/` - Additional project pages and documentation
-- `assets/` - Resume PDF and other static assets
+- `assets/` - Resume PDF
 - `_quarto.yml` - Site configuration and metadata
 - `8439_airlines.html` - Airlines project documentation
 - `8439_tips.html` - Tips project documentation

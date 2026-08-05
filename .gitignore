@@ -9,8 +9,12 @@ _freeze/
 *.qmd.bak
 source/
 
-# Misc Files
+# Misc Files & Images
 ~*.docx
+trees.jpg
+simple.png
+NeuralSignaturesBestGraphic.png
+PrettyPipelineFigure.png
 
 # Rendered output files (keep source .qmd files)
 index.html

@@ -1,0 +1,16 @@
+---
+title: "Projects"
+---
+
+Here are some of my past data science and machine learning projects:
+
+::: {.projects-card}
+## [Airline Satisfaction Analysis (2026)](8439_airlines.html)
+An analysis of airline customer satisfaction data using machine learning techniques to identify key factors influencing customer experience.
+
+## [Tips Analysis (2026)](8439_tips.html)
+Exploratory data analysis and modeling of restaurant tipping patterns to understand customer behavior and service quality correlations.
+
+## [ML Geolocation (2023)](Otherpages/GeolocationML.html)
+Machine learning approach to predicting geographic locations based on various data features and patterns.
+:::

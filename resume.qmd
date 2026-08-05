@@ -1,0 +1,78 @@
+---
+title: "Tyler Johnston"
+---
+
+Madison, WI — Relocating to Charlottesville, VA (December 2026)\
+434-305-7199 \| Johnsttw26\@gmail.com\
+LinkedIn: linkedin.com/in/tyler-johnston-408868381
+
+## Professional Summary
+
+Current data science graduate student with hands-on experience in data analysis, statistical modeling, research workflows, and operational coordination. Background includes working with structured and raw datasets, building predictive models, supporting reporting needs, maintaining organized data records, and communicating findings in academic and team-based environments.
+
+Skilled in Python, R, SPSS, Excel, Qualtrics, REDCap, and data-focused problem solving. I deeply enjoy tackling hard problems and learning new tools to solve them.
+
+## Education
+
+**University of Wisconsin–Madison**\
+M.S. Data Science in Human Behavior \| Expected December 2026 \| Current GPA: 4.0
+
+**James Madison University**\
+B.S. Psychology, Minor in Data Analytics \| GPA: 3.63\
+Recipient of the JMU Psychology Outstanding Achievement in Statistics and Research Methods Award (2021–2022)
+
+## Analytics Projects
+
+**Emotion Regulation fMRI Modeling Project**\
+Developing predictive models using fMRI data to identify patterns associated with emotion regulation, with emphasis on data preparation, feature analysis, model development, and interpretation of results through identifying neural signatures of emotion regulation.
+
+**Geolocation Prediction Neural Network**\
+Built a neural network model using labeled image data to predict approximate geographic location, strengthening experience with supervised learning, classification-oriented modeling, and data-driven pattern recognition.
+
+## Data & Analytics Experience
+
+**University of Virginia School of Medicine – Neurology**  
+Data Technician | June 2022 – September 2022  
+— Worked with raw physiological waveform data and structured patient database records to support research analysis workflows\
+— Assisted with data preprocessing, variable development, and analytical support for predictive indicators\
+— Maintained accuracy and careful handling of sensitive datasets in a detail-oriented analytical environment
+
+**DreaM Lab – James Madison University**  
+Research Assistant | August 2022 – May 2023  
+— Supported data collection, research design, literature review, and statistical analysis for cognitive and behavioral research projects\
+— Helped interpret findings and communicate results
+
+**University of Virginia**  
+Data Curation Assistant | June 2018 – June 2020  
+— Curated, consolidated, and organized publication data to improve database quality, accuracy, and accessibility
+
+**Charlottesville-UVA-Albemarle Emergency Operations Center**  
+EOC Assistance | April 2020 – May 2020  
+— Supported resource tracking and operational coordination during initial COVID-19 response locally\
+— Maintained organization and accuracy in a rapidly evolving environment, primarily working with Veoci and Excel
+
+## Leadership & Operations Experience
+
+**Skyline Tent Company**  
+Crew Leader | August 2023 – October 2024  
+— Led large-scale event installations and operational crews across multiple project sites\
+— Managed logistics, timelines, equipment coordination, and team communication\
+— Developed leadership and problem-solving skills in high-pressure operational environments
+
+**Skyline Tent Company**  
+Operations Assistant | May 2023 – August 2023  
+— Supported scheduling, inventory management, logistics coordination, and operational record keeping\
+— Assisted in maintaining organizational efficiency across concurrent projects
+
+## Technical Skills
+
+**Programming & Analysis:** Python, R, SPSS, Statistical Analysis, Predictive Modeling, Machine Learning
+
+**Data & Reporting Tools:** Excel, Qualtrics, REDCap, Veoci, LabChart
+
+**Analytical Strengths:** Data Cleaning, Visualization, Reporting, Domain Research
+
+## Certifications
+
+— IRB Certification\
+— Forklift Certifications: Scissor Lift 3A, Boom Lift 3B, Counterbalance CL 1/4/5, Rough Terrain CL 7
