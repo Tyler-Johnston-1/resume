@@ -23,7 +23,7 @@ Recipient of the JMU Psychology Outstanding Achievement in Statistics and Resear
 ## Analytics Projects
 
 **Emotion Regulation fMRI Modeling Project**\
-Developed predictive models using high-dimensional fMRI data to identify neural signatures of emotion regulation. Now working with autoencoders, transformers, and mixed effects models in order to classify phenotypes/profiles via latent representations, with the aim of improving personalization of treatment recommendations while reducing time and cost.
+Developed predictive models using high-dimensional fMRI data to identify neural signatures of emotion regulation. Now working with autoencoders, transformers, and mixed effects models in order to classify phenotypes/profiles via latent representations, with the aim of improving personalization of treatment recommendations while reducing time and cost. 
 
 **Geolocation Prediction Neural Network**\
 Built a neural network to predict approximate geographic location from an image.
