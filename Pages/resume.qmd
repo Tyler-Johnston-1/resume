@@ -8,14 +8,13 @@ LinkedIn: linkedin.com/in/tyler-johnston-408868381
 
 ## Professional Summary
 
-Current data science graduate student with hands-on experience in data analysis, statistical modeling, research workflows, and operational coordination. Background includes working with structured and raw datasets, building predictive models, supporting reporting needs, maintaining organized data records, and communicating findings in academic and team-based environments.
-
-Skilled in Python, R, SPSS, Excel, Qualtrics, REDCap, and data-focused problem solving. I deeply enjoy tackling hard problems and learning new tools to solve them.
+Graduate student in Data Science in Human Behavior at the University of Wisconsin–Madison with interdisciplinary experience including cognitive psychology research, statistical modeling/data analysis, and neuroscience research. Interested in leveraging novel machine learning techniques to solve difficult and meaningful problems.
 
 ## Education
 
 **University of Wisconsin–Madison**\
-M.S. Data Science in Human Behavior \| Expected December 2026 \| Current GPA: 4.0
+M.S. Data Science in Human Behavior \| Expected December 2026 \| Current GPA: 4.0\
+Focal Points – Machine learning, mixed effects modeling, large-scale data science, communication of analytic results, research workflows, agentic IDE and local-model workflow integration, reproducible science, natural language processing, and neuroscience.
 
 **James Madison University**\
 B.S. Psychology, Minor in Data Analytics \| GPA: 3.63\
@@ -24,53 +23,50 @@ Recipient of the JMU Psychology Outstanding Achievement in Statistics and Resear
 ## Analytics Projects
 
 **Emotion Regulation fMRI Modeling Project**\
-Developing predictive models using fMRI data to identify patterns associated with emotion regulation, with emphasis on data preparation, feature analysis, model development, and interpretation of results through identifying neural signatures of emotion regulation.
+Developed predictive models using high-dimensional fMRI data to identify neural signatures of emotion regulation. Now working with autoencoders, transformers, and mixed effects models in order to classify phenotypes/profiles via latent representations, with the aim of improving personalization of treatment recommendations while reducing time and cost.
 
 **Geolocation Prediction Neural Network**\
-Built a neural network model using labeled image data to predict approximate geographic location, strengthening experience with supervised learning, classification-oriented modeling, and data-driven pattern recognition.
+Built a neural network to predict approximate geographic location from an image.
+
+**Emoticon Valence Interpretation Research**\
+As an undergraduate assistant in a cognitive psychology lab, aided research through inferential data analysis/visualization, manuscript preparation, and conference presentation.
 
 ## Data & Analytics Experience
 
-**University of Virginia School of Medicine – Neurology**  
-Data Technician | June 2022 – September 2022  
-— Worked with raw physiological waveform data and structured patient database records to support research analysis workflows\
-— Assisted with data preprocessing, variable development, and analytical support for predictive indicators\
-— Maintained accuracy and careful handling of sensitive datasets in a detail-oriented analytical environment
+**Data Curation Assistant**  
+University of Virginia | June 2018 – June 2020  
+— Curated, consolidated, and organized publication data to improve database quality, accuracy, and accessibility.
 
-**DreaM Lab – James Madison University**  
-Research Assistant | August 2022 – May 2023  
-— Supported data collection, research design, literature review, and statistical analysis for cognitive and behavioral research projects\
-— Helped interpret findings and communicate results
+**EOC Operations/Assistant**  
+Charlottesville-UVA-Albemarle Emergency Operations Center | April 2020 – May 2020  
+— Primarily responsible for resource tracking (PPE) and operational coordination during COVID-19 response efforts through Veoci.
 
-**University of Virginia**  
-Data Curation Assistant | June 2018 – June 2020  
-— Curated, consolidated, and organized publication data to improve database quality, accuracy, and accessibility
+**Teaching Assistant – Research Methods and Statistics** 
+\
+James Madison University | August 2020 - May 2021
 
-**Charlottesville-UVA-Albemarle Emergency Operations Center**  
-EOC Assistance | April 2020 – May 2020  
-— Supported resource tracking and operational coordination during initial COVID-19 response locally\
-— Maintained organization and accuracy in a rapidly evolving environment, primarily working with Veoci and Excel
+**Data Technician – Neurology**  
+University of Virginia School of Medicine | June 2022 – September 2022  
+— Worked with raw physiological waveform data and sensitive, structured patient database records (REDcap) to aid research on autonomic predictors of SUDEP.
+
+**Research Assistant - Cognitive Psychology/DreaM Lab**  
+James Madison University | August 2022 – May 2023  
+— Supported research on interpretation differences as a function of emoji usage in text through data collection, research design, literature review, statistical analysis, and reporting of findings. \
+— Upadhyay SSN, Gunraj DN and Phillips NC (2023) Mad or mad-mad: conveying subtle emotion with face emoji. Front. Psychol. 14:1183299. doi: 10.3389/fpsyg.2023.1183299
 
 ## Leadership & Operations Experience
 
-**Skyline Tent Company**  
-Crew Leader | August 2023 – October 2024  
-— Led large-scale event installations and operational crews across multiple project sites\
-— Managed logistics, timelines, equipment coordination, and team communication\
-— Developed leadership and problem-solving skills in high-pressure operational environments
+**Operations Assistant**  
+Skyline Tent Company | May 2023 – August 2023  
+— Managed scheduling, inventory, logistics coordination, and equipment/vehicle upkeep.
 
-**Skyline Tent Company**  
-Operations Assistant | May 2023 – August 2023  
-— Supported scheduling, inventory management, logistics coordination, and operational record keeping\
-— Assisted in maintaining organizational efficiency across concurrent projects
+**Crew Leader**  
+Skyline Tent Company | August 2023 – October 2024  
+— Led large-scale event installations and operational crews across multiple project sites. 
 
-## Technical Skills
+## General
 
-**Programming & Analysis:** Python, R, SPSS, Statistical Analysis, Predictive Modeling, Machine Learning
-
-**Data & Reporting Tools:** Excel, Qualtrics, REDCap, Veoci, LabChart
-
-**Analytical Strengths:** Data Cleaning, Visualization, Reporting, Domain Research
+Very passionate and self-motivated to learn new techniques, softwares, and domains. Especially when applicable to prosocial and wellbeing-relevant knowledge/outcomes, and often through empiricism and collaboration.
 
 ## Certifications
 
