@@ -1,0 +1,74 @@
+---
+title: "Tyler Johnston"
+---
+
+Madison, WI — Relocating to Charlottesville, VA (December 2026)\
+434-305-7199 \| Johnsttw26\@gmail.com\
+LinkedIn: linkedin.com/in/tyler-johnston-408868381
+
+## Professional Summary
+
+Graduate student in Data Science in Human Behavior at the University of Wisconsin–Madison with interdisciplinary experience including cognitive psychology research, statistical modeling/data analysis, and neuroscience research. Interested in leveraging novel machine learning techniques to solve difficult and meaningful problems.
+
+## Education
+
+**University of Wisconsin–Madison**\
+M.S. Data Science in Human Behavior \| Expected December 2026 \| Current GPA: 4.0\
+Focal Points – Machine learning, mixed effects modeling, large-scale data science, communication of analytic results, research workflows, agentic IDE and local-model workflow integration, reproducible science, natural language processing, and neuroscience.
+
+**James Madison University**\
+B.S. Psychology, Minor in Data Analytics \| GPA: 3.63\
+Recipient of the JMU Psychology Outstanding Achievement in Statistics and Research Methods Award (2021–2022)
+
+## Analytics Projects
+
+**Emotion Regulation fMRI Modeling Project**\
+Developed predictive models using high-dimensional fMRI data to identify neural signatures of emotion regulation. Now working with autoencoders, transformers, and mixed effects models in order to classify phenotypes/profiles via latent representations, with the aim of improving personalization of treatment recommendations while reducing time and cost. 
+
+**Geolocation Prediction Neural Network**\
+Built a neural network to predict approximate geographic location from an image.
+
+**Emoticon Valence Interpretation Research**\
+As an undergraduate assistant in a cognitive psychology lab, aided research through inferential data analysis/visualization, manuscript preparation, and conference presentation.
+
+## Data & Analytics Experience
+
+**Data Curation Assistant**  
+University of Virginia | June 2018 – June 2020  
+— Curated, consolidated, and organized publication data to improve database quality, accuracy, and accessibility.
+
+**EOC Operations/Assistant**  
+Charlottesville-UVA-Albemarle Emergency Operations Center | April 2020 – May 2020  
+— Primarily responsible for resource tracking (PPE) and operational coordination during COVID-19 response efforts through Veoci.
+
+**Teaching Assistant – Research Methods and Statistics**
+\
+James Madison University | August 2020 - May 2021
+
+**Data Technician – Neurology**  
+University of Virginia School of Medicine | June 2022 – September 2022  
+— Worked with raw physiological waveform data and sensitive, structured patient database records (REDcap) to aid research on autonomic predictors of SUDEP.
+
+**Research Assistant - Cognitive Psychology/DreaM Lab**  
+James Madison University | August 2022 – May 2023  
+— Supported research on interpretation differences as a function of emoji usage in text through data collection, research design, literature review, statistical analysis, and reporting of findings. \
+— Upadhyay SSN, Gunraj DN and Phillips NC (2023) Mad or mad-mad: conveying subtle emotion with face emoji. Front. Psychol. 14:1183299. doi: 10.3389/fpsyg.2023.1183299
+
+## Leadership & Operations Experience
+
+**Operations Assistant**  
+Skyline Tent Company | May 2023 – August 2023  
+— Managed scheduling, inventory, logistics coordination, and equipment/vehicle upkeep.
+
+**Crew Leader**  
+Skyline Tent Company | August 2023 – October 2024  
+— Led large-scale event installations and operational crews across multiple project sites. 
+
+## General
+
+Very passionate and self-motivated to learn new techniques, softwares, and domains. Especially when applicable to prosocial and wellbeing-relevant knowledge/outcomes, and often through empiricism and collaboration.
+
+## Certifications
+
+— IRB Certification\
+— Forklift Certifications: Scissor Lift 3A, Boom Lift 3B, Counterbalance CL 1/4/5, Rough Terrain CL 7
