@@ -1,5 +1,124 @@
 [
   {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Tyler Johnston",
+    "section": "",
+    "text": "Madison, WI — Relocating to Charlottesville, VA (December 2026)\n434-305-7199 | Johnsttw26@gmail.com\nLinkedIn: linkedin.com/in/tyler-johnston-408868381"
+  },
+  {
+    "objectID": "resume.html#professional-summary",
+    "href": "resume.html#professional-summary",
+    "title": "Tyler Johnston",
+    "section": "Professional Summary",
+    "text": "Professional Summary\nGraduate student in Data Science in Human Behavior at the University of Wisconsin–Madison with interdisciplinary experience including cognitive psychology research, statistical modeling/data analysis, and neuroscience research. Interested in leveraging novel machine learning techniques to solve difficult and meaningful problems."
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Tyler Johnston",
+    "section": "Education",
+    "text": "Education\nUniversity of Wisconsin–Madison\nM.S. Data Science in Human Behavior | Expected December 2026 | Current GPA: 4.0\nFocal Points – Machine learning, mixed effects modeling, large-scale data science, communication of analytic results, research workflows, agentic IDE and local-model workflow integration, reproducible science, natural language processing, and neuroscience.\nJames Madison University\nB.S. Psychology, Minor in Data Analytics | GPA: 3.63\nRecipient of the JMU Psychology Outstanding Achievement in Statistics and Research Methods Award (2021–2022)"
+  },
+  {
+    "objectID": "resume.html#analytics-projects",
+    "href": "resume.html#analytics-projects",
+    "title": "Tyler Johnston",
+    "section": "Analytics Projects",
+    "text": "Analytics Projects\nEmotion Regulation fMRI Modeling Project\nDeveloped predictive models using high-dimensional fMRI data to identify neural signatures of emotion regulation. Now working with autoencoders, transformers, and mixed effects models in order to classify phenotypes/profiles via latent representations, with the aim of improving personalization of treatment recommendations while reducing time and cost.\nGeolocation Prediction Neural Network\nBuilt a neural network to predict approximate geographic location from an image.\nEmoticon Valence Interpretation Research\nAs an undergraduate assistant in a cognitive psychology lab, aided research through inferential data analysis/visualization, manuscript preparation, and conference presentation."
+  },
+  {
+    "objectID": "resume.html#data-analytics-experience",
+    "href": "resume.html#data-analytics-experience",
+    "title": "Tyler Johnston",
+    "section": "Data & Analytics Experience",
+    "text": "Data & Analytics Experience\nData Curation Assistant\nUniversity of Virginia | June 2018 – June 2020\n— Curated, consolidated, and organized publication data to improve database quality, accuracy, and accessibility.\nEOC Operations/Assistant\nCharlottesville-UVA-Albemarle Emergency Operations Center | April 2020 – May 2020\n— Primarily responsible for resource tracking (PPE) and operational coordination during COVID-19 response efforts through Veoci.\nTeaching Assistant – Research Methods and Statistics\nJames Madison University | August 2020 - May 2021\nData Technician – Neurology\nUniversity of Virginia School of Medicine | June 2022 – September 2022\n— Worked with raw physiological waveform data and sensitive, structured patient database records (REDcap) to aid research on autonomic predictors of SUDEP.\nResearch Assistant - Cognitive Psychology/DreaM Lab\nJames Madison University | August 2022 – May 2023\n— Supported research on interpretation differences as a function of emoji usage in text through data collection, research design, literature review, statistical analysis, and reporting of findings.\n— Upadhyay SSN, Gunraj DN and Phillips NC (2023) Mad or mad-mad: conveying subtle emotion with face emoji. Front. Psychol. 14:1183299. doi: 10.3389/fpsyg.2023.1183299"
+  },
+  {
+    "objectID": "resume.html#leadership-operations-experience",
+    "href": "resume.html#leadership-operations-experience",
+    "title": "Tyler Johnston",
+    "section": "Leadership & Operations Experience",
+    "text": "Leadership & Operations Experience\nOperations Assistant\nSkyline Tent Company | May 2023 – August 2023\n— Managed scheduling, inventory, logistics coordination, and equipment/vehicle upkeep.\nCrew Leader\nSkyline Tent Company | August 2023 – October 2024\n— Led large-scale event installations and operational crews across multiple project sites."
+  },
+  {
+    "objectID": "resume.html#general",
+    "href": "resume.html#general",
+    "title": "Tyler Johnston",
+    "section": "General",
+    "text": "General\nVery passionate and self-motivated to learn new techniques, softwares, and domains. Especially when applicable to prosocial and wellbeing-relevant knowledge/outcomes, and often through empiricism and collaboration."
+  },
+  {
+    "objectID": "resume.html#certifications",
+    "href": "resume.html#certifications",
+    "title": "Tyler Johnston",
+    "section": "Certifications",
+    "text": "Certifications\n— IRB Certification\n— Forklift Certifications: Scissor Lift 3A, Boom Lift 3B, Counterbalance CL 1/4/5, Rough Terrain CL 7"
+  },
+  {
+    "objectID": "Pages/projects.html",
+    "href": "Pages/projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Here are some of my past data science and machine learning projects:"
+  },
+  {
+    "objectID": "Pages/projects.html#airline-satisfaction-analysis-2026",
+    "href": "Pages/projects.html#airline-satisfaction-analysis-2026",
+    "title": "Projects",
+    "section": "Airline Satisfaction Analysis (2026)",
+    "text": "Airline Satisfaction Analysis (2026)\nAn analysis of airline customer satisfaction data using machine learning techniques to identify key factors influencing customer experience."
+  },
+  {
+    "objectID": "Pages/projects.html#tips-analysis-2026",
+    "href": "Pages/projects.html#tips-analysis-2026",
+    "title": "Projects",
+    "section": "Tips Analysis (2026)",
+    "text": "Tips Analysis (2026)\nExploratory data analysis and modeling of restaurant tipping patterns to understand customer behavior and service quality correlations."
+  },
+  {
+    "objectID": "Pages/projects.html#ml-geolocation-2023",
+    "href": "Pages/projects.html#ml-geolocation-2023",
+    "title": "Projects",
+    "section": "ML Geolocation (2023)",
+    "text": "ML Geolocation (2023)\nMachine learning approach to predicting geographic locations based on various data features and patterns."
+  },
+  {
+    "objectID": "Pages/index.html",
+    "href": "Pages/index.html",
+    "title": "Tyler Johnston",
+    "section": "",
+    "text": "Headshot\n\n\n\n\n\n\nHi, I’m Tyler.\nI like understanding complex systems and learning new things.\n\n\n\n\n\n\n\n\nM.S. Data Science in Human Behavior\nUW–Madison · Expected 2026\n\n\n\n\n\nB.S. Psychology · Minor in Data Analytics\nJames Madison University\n\n\n\n\n View Resume  View Projects"
+  },
+  {
+    "objectID": "Pages/index.html#current-project",
+    "href": "Pages/index.html#current-project",
+    "title": "Tyler Johnston",
+    "section": " Current Project",
+    "text": "Current Project\n\nDeveloping machine learning models to identify neural signatures associated with emotional regulation.\n\n\n\n\n\n\nNeural Signatures\n\n\n\n\n\n\n\nPipeline"
+  },
+  {
+    "objectID": "Pages/links.html",
+    "href": "Pages/links.html",
+    "title": "Tyler Johnston",
+    "section": "",
+    "text": "https://github.com/tyler-johnston-1"
+  },
+  {
+    "objectID": "Pages/links.html#github",
+    "href": "Pages/links.html#github",
+    "title": "Tyler Johnston",
+    "section": "",
+    "text": "https://github.com/tyler-johnston-1"
+  },
+  {
+    "objectID": "Pages/links.html#linkedin",
+    "href": "Pages/links.html#linkedin",
+    "title": "Tyler Johnston",
+    "section": "LinkedIn",
+    "text": "LinkedIn\nhttps://www.linkedin.com/in/tyler-johnston-408868381/"
+  },
+  {
     "objectID": "Pages/resume.html",
     "href": "Pages/resume.html",
     "title": "Tyler Johnston",
@@ -54,68 +173,5 @@
     "title": "Tyler Johnston",
     "section": "Certifications",
     "text": "Certifications\n— IRB Certification\n— Forklift Certifications: Scissor Lift 3A, Boom Lift 3B, Counterbalance CL 1/4/5, Rough Terrain CL 7"
-  },
-  {
-    "objectID": "Pages/links.html",
-    "href": "Pages/links.html",
-    "title": "Tyler Johnston",
-    "section": "",
-    "text": "https://github.com/tyler-johnston-1"
-  },
-  {
-    "objectID": "Pages/links.html#github",
-    "href": "Pages/links.html#github",
-    "title": "Tyler Johnston",
-    "section": "",
-    "text": "https://github.com/tyler-johnston-1"
-  },
-  {
-    "objectID": "Pages/links.html#linkedin",
-    "href": "Pages/links.html#linkedin",
-    "title": "Tyler Johnston",
-    "section": "LinkedIn",
-    "text": "LinkedIn\nhttps://www.linkedin.com/in/tyler-johnston-408868381/"
-  },
-  {
-    "objectID": "Pages/index.html",
-    "href": "Pages/index.html",
-    "title": "Tyler Johnston",
-    "section": "",
-    "text": "Headshot\n\n\n\n\n\n\nHi, I’m Tyler.\nI like understanding complex systems and learning new things.\n\n\n\n\n\n\n\n\nM.S. Data Science in Human Behavior\nUW–Madison · Expected 2026\n\n\n\n\n\nB.S. Psychology · Minor in Data Analytics\nJames Madison University\n\n\n\n\n View Resume  View Projects"
-  },
-  {
-    "objectID": "Pages/index.html#current-project",
-    "href": "Pages/index.html#current-project",
-    "title": "Tyler Johnston",
-    "section": " Current Project",
-    "text": "Current Project\n\nDeveloping machine learning models to identify neural signatures associated with emotional regulation.\n\n\n\n\n\n\nNeural Signatures\n\n\n\n\n\n\n\nPipeline"
-  },
-  {
-    "objectID": "Pages/projects.html",
-    "href": "Pages/projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Here are some of my past data science and machine learning projects:"
-  },
-  {
-    "objectID": "Pages/projects.html#airline-satisfaction-analysis-2026",
-    "href": "Pages/projects.html#airline-satisfaction-analysis-2026",
-    "title": "Projects",
-    "section": "Airline Satisfaction Analysis (2026)",
-    "text": "Airline Satisfaction Analysis (2026)\nAn analysis of airline customer satisfaction data using machine learning techniques to identify key factors influencing customer experience."
-  },
-  {
-    "objectID": "Pages/projects.html#tips-analysis-2026",
-    "href": "Pages/projects.html#tips-analysis-2026",
-    "title": "Projects",
-    "section": "Tips Analysis (2026)",
-    "text": "Tips Analysis (2026)\nExploratory data analysis and modeling of restaurant tipping patterns to understand customer behavior and service quality correlations."
-  },
-  {
-    "objectID": "Pages/projects.html#ml-geolocation-2023",
-    "href": "Pages/projects.html#ml-geolocation-2023",
-    "title": "Projects",
-    "section": "ML Geolocation (2023)",
-    "text": "ML Geolocation (2023)\nMachine learning approach to predicting geographic locations based on various data features and patterns."
   }
 ]
